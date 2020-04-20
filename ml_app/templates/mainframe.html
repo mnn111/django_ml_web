@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!--  <h3>Mainframe</h3>-->
+<h4>Hi there, {{user.username}}!!</h4>
+<p>Here are different models that we have trained.</p>
+<br>
+<p>1) application of <b>random forest(sklearn)</b> and <b>nural network(keras)</b> on kaggel dataset, <br><a href="{% url 'titanic' %}">Titanic: Machine Learning from Disaster</a></p>
+
+{% endblock %}

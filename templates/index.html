@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titanic Predictor</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Titanic Prediction</h1>
+    <button type="button" onclick="clicked()">click here to test js.</button>
+    <br>
+    <br>
+    <h4>Fill in the details to create virtual pasenger.</h4>
+<!--    <br>-->
+    <p>We will predict would virtual passenger <b>survive or not,</b> with help of different machine learning models.</p>
+
+    <form action="{% url 'titanic_pred' %}">
+        {% csrf_token %}
+<!--        pclass,sex,age,sibhp,parch,fare,mbarked,title-->
+        <br>
+        <br>
+        <br>
+
+        <p>pessenger class</p>
+        <select name="pclass">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+<!--        <input type="text" name="pclass">-->
+
+        <p>sex</p>
+        <select name="sex">
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+        </select>
+<!--        <input type="text" name="sex">-->
+
+        <p>age</p>
+        <input type="text" name="age">
+
+        <p>sibhp</p>
+        <select name="sibhp">
+          <option value="0">0</option>
+
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="8">8</option>
+
+        </select>
+<!--        <input type="text" name="sibhp">-->
+
+        <p>parch</p>
+        <select name="parch">
+          <option value="0">0</option>
+
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="8">8</option>
+
+        </select>
+<!--        <input type="text" name="parch">-->
+
+        <p>fare</p>
+        <input type="text" name="fare">
+
+        <p>mbarked</p>
+        <select name="mbarked">
+          <option value="0">C</option>
+          <option value="1">Q</option>
+          <option value="2">S</option>
+
+        </select>
+
+<!--        <input type="text" name="mbarked">-->
+<!--'Mr','Miss','Mrs','Master','Dr','Rev','Officer','Royalty'), (0,1,2,3,4,5,6,7-->
+        <p>title</p>
+        <select name="title">
+          <option value="0">Mr</option>
+          <option value="1">Miss</option>
+          <option value="2">Mrs</option>
+          <option value="3">Master</option>
+          <option value="4">Dr</option>
+          <option value="5">Rev</option>
+          <option value="6">Officer</option>
+          <option value="7">Royalty</option>
+
+        </select>
+
+        <!--        <input type="text" name="title">-->
+        <h3>Get your titanic prediction here.</h3>
+
+        <input type="submit">
+    </form>
+
+<!--    <a href="{% url 'pred' %}">result</a>-->
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

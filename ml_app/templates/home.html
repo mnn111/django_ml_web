@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h3>Hello, {{user.username}}</h3>
+    <h4>Welcome to machine learning prediction environment</h4>
+    <br>
+    <br>
+    <p>This environment is meant to demonstrate application of different machine learning algorithms.</p>
+    <p>you can find different models inside <a href="{% url 'mainframe' %}">Mainframe</a> </p>
+
+{% endblock %}

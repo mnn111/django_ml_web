@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <h4>Hi there, {{user.username}}!!</h4>
+
+    <h2>Titanic Prediction</h2>
+    <br>
+    <h4>Fill in the details to create virtual pasenger.</h4>
+    <p>We will predict would virtual passenger <b>survive or not,</b> with help of different machine learning models.</p>
+    <br>
+    <p><b>Variable Notes</b><br>
+        pclass: A proxy for socio-economic status (SES)<br>
+        1st = Upper<br>
+        2nd = Middle<br>
+        3rd = Lower<br>
+        <br>
+        age: Age is fractional if less than 1. If the age is estimated, is it in the form of xx.5<br>
+        <br>
+        sibsp: The dataset defines family relations in this way...<br>
+        Sibling = brother, sister, stepbrother, stepsister<br>
+        Spouse = husband, wife (mistresses and fiancés were ignored)<br>
+
+        parch: The dataset defines family relations in this way...<br>
+        Parent = mother, father<br>
+        Child = daughter, son, stepdaughter, stepson<br>
+        Some children travelled only with a nanny, therefore parch=0 for them.<br>
+    </p>
+
+    <div class="container table-responsive" style="height: 500px; width=1000px;">
+          <table class="table table-fixed table-hover table-bordered">
+              <thead class="thead-dark" style="position: relative">
+                    <tr style="position: sticky; top: 0;">
+                        <th>pessenger class</th>
+                        <th>sex</th>
+                        <th>age</th>
+                        <th>sibhp</th>
+                        <th>parch</th>
+                        <th>fare</th>
+                        <th>mbarked</th>
+                        <th>title</th>
+                        <th>scikitlearn result</th>
+                        <th>keras nural net results</th>
+                        <th>keras nural net rate</th>
+
+                        <th>date/time</th>
+
+                    </tr>
+                </thead>
+             {% include 'titanic_form.html' %}
+
+             {% include 'form_data_excluded.html' %}
+
+           </table>
+    </div>
+
+    <button><a href="{% url 'ml_home' %}">HOME</a></button>
+    <button type="button" onclick="clicked()">click here to test js.</button>
+</div>
+
+{% endblock %}

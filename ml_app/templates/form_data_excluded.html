@@ -1,0 +1,43 @@
+
+{% for record in records %}
+    {% if record.completed %}
+        <tr>
+            <td>
+                {{record.pclass}}
+            </td>
+            <td>
+                {{record.sex}}
+            </td>
+            <td>
+                {{record.age}}
+            </td>
+            <td>
+                {{record.sibhp}}
+            </td>
+            <td>
+                {{record.parch}}
+            </td>
+            <td>
+                {{record.fare}}
+            </td>
+            <td>
+                {{record.mbarked}}
+            </td>
+            <td>
+                {{record.title}}
+            </td>
+            <td>
+                {{record.skl_result}}
+            </td>
+            <td>
+                {{record.nn_result}}
+            </td>
+            <td>
+                {{record.nn_rate}}
+            </td>
+            <td>
+                {{record.date_time}}
+            </td>
+        </tr>
+    {% endif %}
+{% endfor %}

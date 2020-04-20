@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <form action="{% url 'titanic_pred' %}" method="post">
+    {% csrf_token %}
+    <!--        pclass,sex,age,sibhp,parch,fare,mbarked,title-->
+        <tr>
+    <!--                <p>pessenger class</p>-->
+            <td>
+                <select name="pclass">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+
+            </td>
+    <!--                <p>sex</p>-->
+
+            <td>
+                <select name="sex">
+                  <option value="0">Male</option>
+                  <option value="1">Female</option>
+                </select>
+
+            </td>
+    <!--                <p>age</p>-->
+            <td>
+                <input style="width: 70px;" type="text" name="age">
+
+            </td>
+    <!--                <p>sibhp</p>-->
+            <td>
+                <select name="sibhp">
+                  <option value="0">0</option>
+
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="8">8</option>
+
+                </select>
+
+            </td>
+    <!--                <p>parch</p>-->
+            <td>
+                <select name="parch">
+                  <option value="0">0</option>
+
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="8">8</option>
+
+                </select>
+
+            </td>
+    <!--            <p>fare</p>-->
+            <td>
+                <input style="width: 70px;" type="text" name="fare">
+
+            </td>
+    <!--            <p>mbarked</p>-->
+            <td>
+                <select name="mbarked">
+                  <option value="0">C</option>
+                  <option value="1">Q</option>
+                  <option value="2">S</option>
+
+                </select>
+            </td>
+    <!--'Mr','Miss','Mrs','Master','Dr','Rev','Officer','Royalty'), (0,1,2,3,4,5,6,7-->
+    <!--            <p>title</p>-->
+            <td>
+                <select name="title">
+                  <option value="0">Mr</option>
+                  <option value="1">Miss</option>
+                  <option value="2">Mrs</option>
+                  <option value="3">Master</option>
+                  <option value="4">Dr</option>
+                  <option value="5">Rev</option>
+                  <option value="6">Officer</option>
+                  <option value="7">Royalty</option>
+
+                </select>
+            </td>
+        <tr>
+            <td colspan="4"><h5>Get your titanic prediction here.</h5></td>
+            <td><input type="submit"></td>
+
+        </tr>
+    </form>
+</body>
+</html>
